@@ -5,6 +5,8 @@ import { CoC7Item } from './items/item.js'
 import { RollDialog } from './apps/roll-dialog.js'
 import { chatHelper } from './chat/helper.js'
 
+import { skill2ruby } from './skill-sort-ja.js'
+
 export class CoC7Utilities {
   // static test(event){
   //   if( event.shiftKey) ui.notifications.info('Hello from SHIFT utilities');
@@ -935,15 +937,15 @@ export class CoC7Utilities {
   }
 
   static sortByNameKey (a, b) {
-    return a.name
+    return skill2ruby(a)
       .normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '')
       .toLocaleLowerCase()
       .localeCompare(
-        b.name
-          .normalize('NFD')
-          .replace(/[\u0300-\u036f]/g, '')
-          .toLocaleLowerCase()
+        skill2ruby(b)
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLocaleLowerCase()
       )
   }
 
