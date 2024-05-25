@@ -812,14 +812,14 @@
 
   "CoC7.PulpTalents": "パルプ･タレント",
   "CoC7.TalentType": "タレント･タイプ",
-  "CoC7.PhysicalTalent": "肉体的",
+  "CoC7.PhysicalTalent": "身体的",
   "CoC7.MentalTalent": "精神的",
-  "CoC7.CombatTalent": "戦闘",
-  "CoC7.MiscellaneousTalent": "雑多",
+  "CoC7.CombatTalent": "戦闘的",
+  "CoC7.MiscellaneousTalent": "その他",
   "CoC7.BasicTalent": "通常",
   "CoC7.InsaneTalent": "狂気",
   "CoC7.Sane": "正気",
-  "CoC7.OtherTalent": "その他",
+  "CoC7.OtherTalent": "それ以外",
 
   "CoC7.Items": "アイテム",
   "CoC7.Vehicle": "乗物",
