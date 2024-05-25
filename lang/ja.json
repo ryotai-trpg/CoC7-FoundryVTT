@@ -900,7 +900,6 @@
   "CoC7.magicPointsRecovered": "MPを回復",
   "CoC7.hasCriticalWounds": "重傷のため､耐久力は回復できない",
   "CoC7.quickHealer": "クイック･ヒーラー",
-
   "CoC7.ErrorNoDodgeSkill": "キャラクターは回避技能を持っていない",
   "CoC7.ErrorNotEnoughLuck": "{actor} にはロールを成功させるために必要な幸運が無い",
   "CoC7.ErrorManeuverNotPossible": "対象とのビルド差のためマヌーバーを試みることができない",
@@ -961,6 +960,7 @@
   "CoC7.German": "ドイツ語",
   "CoC7.Polish": "ポーランド語",
   "CoC7.TraditionalChinese": "繁体字中国語",
+  "CoC7.Japanese": "日本語",
   "CoC7.SelectSourceLanguage": "言語を選択",
   "CoC7.ImportedUnnamedCharacter": "インポートされた無名のキャラクター",
   "CoC7.CreatedImportedCharactersFolder": "'インポート･キャラクター'フォルダを作成",
