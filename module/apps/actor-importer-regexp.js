@@ -54,7 +54,7 @@ import { CoC7Utilities } from '../utilities.js'
  * If there is new functionality check for this string in the translations / keys for your language "NEW KEY BELOW - TRANSLATION REQUIRED"
  */
 const nameCharacters =
-  '\\u3000\\u3400-\\u4DBF\\u4E00-\\u9FFF\\w\\(\\)\\-\\/&"\'' +
+  '\\u3000\\u3400-\\u4DBF\\u3040-\\u30FF\\u4E00-\\u9FFF\\w\\(\\)\\-\\/&"\'' +
   CoC7Utilities.quoteRegExp(
     'áéíóàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃĀÑÕäëïöüÿÄËÏÖÜŸàèçÇßØøÅåÆæœ“”«»ąćęłńóśźżĄĆĘŁŃÓŚŹŻ'
   )
@@ -211,6 +211,36 @@ const keys = {
       '\n(?:' + '(?:Skills|技能列表)' + '(?:\\s*\\([^\\)]+\\))?)[:\n]',
     sectionLangauges: '\n(?:' + 'Languages|語言' + ')[:\n]',
     sectionSpells: '\n(?:' + 'spells|咒文列表|咒文' + ')[:\n]',
+    handgun:
+      '(?<type>' +
+      ' 遂發槍|\\.22短口自動手槍|\\.25短口手槍(單管)|\\.32或7\\.65mm左輪手槍|\\.32或7\\.65mm自動手槍|\\.357 Magnum左輪手槍|\\.38或9mm左輪手槍|\\.38自動手槍|貝雷塔M9|格洛克17|9mm自動手槍|魯格P08|\\.41左輪手槍|\\.44馬格南左輪手槍|\\.45左輪手槍|\\.45自動手槍|沙漠之鷹|Gun|Revolver|Pistol|Handgun|Derringer|Beretta|Luger|Desert Eagle| \\.38' +
+      ')',
+    rifle:
+      '(?<type>' +
+      '步槍|卡賓槍|半自動步槍|獵象槍|Rifle|Shotgun|Carbine|Gauge |Lee-Enfield|Elephant' +
+      ')',
+    smb: '(?<type>' + 'Submachine Gun|Thompson|衝鋒槍' + ')',
+    machineGun: '(?<type>' + 'Browning|Vickers|機槍' + ')',
+    launched: '(?<type>' + 'Molotov|Grenade|Dynamite爆炸物|手榴彈|重武器' + ')',
+    example:
+      '示範角色, 年齡 27\n力量 75 體質 60 體型 80 敏捷 70 外貎 60 智力 80\n意志 50 教育 85 SAN 55 HP 14 DB: 1D4\n體格: 1 Move: 7 MP: 10 幸運: 40 護甲: 1\n攻擊次數: 3 理智喪失: 1d4/1d8\n戰鬥列表\n咬 50% (25/10), 傷害 1D6\n空手 30% (15/6), 傷害 1D3\n手槍 40% (20/8), 傷害 1D8+1\n閃避 50% (25/10)\n技能列表\n動物馴養 55%, 取悅 30%, 急救 25%, 潛行 20%,\n聆聽 50%, 藥學 45%, 精神分析 25%, 心理學 75%,\n科學 (司法科學) 90%, 科學 (密碼學) 35%, \n偵查 35%, 喬裝 10%\n語言: 粵語 80%, 讀唇 5%.\n咒文: 召喚 NPC, 指揮 NPC.'
+  },
+  'ja': {
+    description: 'CoC7.Japanese',
+    dbNone: 'none',
+    armorNone: 'none',
+    attacksPerRoundNone: 'none',
+    sanLossNone: 'none',
+    fulldb: '(' + 'Damage Bonus|DB|ダメージ・ボーナス' + ')',
+    /* NEW KEY BELOW - TRANSLATION REQUIRED */
+    halfdb: '(' + '½|half' + ')',
+    sectionCombats:
+      '\n(?:' + 'combat|fighting attacks|戦闘|武器' + ')[:\n]',
+    newCombatHeader: '\n' + '戦闘' + '\n',
+    sectionSkills:
+      '\n(?:' + '(?:Skills|技能)' + '(?:\\s*\\([^\\)]+\\))?)[:\n]',
+    sectionLangauges: '\n(?:' + 'Languages|言語' + ')[:\n]',
+    sectionSpells: '\n(?:' + 'spells|呪文' + ')[:\n]',
     handgun:
       '(?<type>' +
       ' 遂發槍|\\.22短口自動手槍|\\.25短口手槍(單管)|\\.32或7\\.65mm左輪手槍|\\.32或7\\.65mm自動手槍|\\.357 Magnum左輪手槍|\\.38或9mm左輪手槍|\\.38自動手槍|貝雷塔M9|格洛克17|9mm自動手槍|魯格P08|\\.41左輪手槍|\\.44馬格南左輪手槍|\\.45左輪手槍|\\.45自動手槍|沙漠之鷹|Gun|Revolver|Pistol|Handgun|Derringer|Beretta|Luger|Desert Eagle| \\.38' +
@@ -744,6 +774,93 @@ const translations = {
       keys['zh-TW'].sectionLangauges +
       '|' +
       keys['zh-TW'].sectionSpells +
+      ')'
+  },
+  'ja': {
+    // age: '(?<![a-z])' + 'age|年齡' + '(\\s*:)?\\s*(?<age>\\d+)[,、\\s]*',
+    age: '(?<![a-z])' + '(\\s*:)?\\s*(?<age>\\d+)[,、\\s]*' + '歳|才' + '[,、\\s]*' ,
+    /* NEW KEY BELOW - TRANSLATION REQUIRED */
+    occupation:
+      '[,、\\s]*' + '職業' + '(\\s*:)?\\s+(?<occupation>.+)[,、\\s\n]*',
+    str: '(?<![a-z])' + 'STR' + '(\\s*:)?\\s*(?<str>\\d+|-)[,、\\s\n]*',
+    con: '(?<![a-z])' + 'CON' + '(\\s*:)?\\s*(?<con>\\d+|-)[,、\\s\n]*',
+    siz: '(?<![a-z])' + 'SIZ' + '(\\s*:)?\\s*(?<siz>\\d+|-)[,、\\s\n]*',
+    int: '(?<![a-z])' + 'INT' + '(\\s*:)?\\s*(?<int>\\d+|-)[,、\\s\n]*',
+    pow: '(?<![a-z])' + 'POW' + '(\\s*:)?\\s*(?<pow>\\d+|-)[,、\\s\n]*',
+    dex: '(?<![a-z])' + 'DEX' + '(\\s*:)?\\s*(?<dex>\\d+|-)[,、\\s\n]*',
+    app: '(?<![a-z])' + 'APP' + '(\\s*:)?\\s*(?<app>\\d+|-)[,、\\s\n]*',
+    edu: '(?<![a-z])' + 'EDU' + '(\\s*:)?\\s*(?<edu>\\d+|-)[,、\\s\n]*',
+    san:
+      '(?<![a-z])(?:' +
+      'SAN|Sanity|正気度' +
+      ')(\\s*:)?\\s*(?<san>\\d+|-)[,、\\s\n]*',
+    hp:
+      '(?<![a-z])(?:' +
+      'HP|Hit points|耐久力' +
+      ')(\\s*:)?\\s*(?<hp>\\d+|-)[,、\\s\n]*',
+    mp:
+      '(?<![a-z])(?:' +
+      'MP|Magic points|マジック・ポイント|マジックポイント' +
+      ')(\\s*:)?\\s*(?<mp>\\d+|-)[,、\\s\n]*',
+    db:
+      '(?<![a-z])(?:' +
+      keys['ja'].fulldb +
+      ')(\\s*:)?\\s*(?<db>[+-]?\\d+(?:d\\d+|D\\d+)?|' +
+      keys['ja'].dbNone +
+      ')[,、\\s\n]*',
+    build:
+      '(?<![a-z])' + 'Build|ビルド' + '(\\s*:)?\\s*(?<build>[+-]?\\d+)[,、\\s\n]*',
+    armor:
+      '(?<![a-z])' +
+      'Armor|装甲' +
+      '(\\s*:)?\\s*(?<armor>' +
+      keys['ja'].armorNone +
+      '|\\d+)[,、\\s\n]*',
+    mov: '(?<![a-z])' + 'Move|MOV|Mov|移動' + '(\\s*:)?\\s*(?<mov>\\d+)[,、\\s\n]*',
+    lck: '(?<![a-z])' + 'Luck|幸運' + '(\\s*:)?\\s*(?<lck>\\d+|-)[,、\\s\n]*',
+    attacksPerRound:
+      '(?<![a-z])(?:' +
+      'Attacks per round|# Attacks|1ラウンドの攻撃回数' +
+      ')(\\s*:)?\\s*(?<attacksPerRound>' +
+      keys['ja'].attacksPerRoundNone +
+      '|\\d+(?!d))[,、\\s\n]*',
+    sanLoss:
+      '(?<![a-z])(?:' +
+      'Sanity loss|SAN loss|正気度喪失|SAN喪失|SAN値喪失' +
+      ')(\\s*:)?\\s*(?<sanLoss>' +
+      keys['ja'].sanLossNone +
+      '|\\dD?[+\\d]*\\/\\dD?[+\\d]*)[,、\\s\n]*',
+    weapon:
+      '(^|\\n)(?<name>[.\\t ' +
+      nameCharacters +
+      ']+)(\\**,?\\s+|\\*)(?:\\(|(?<percentage>\\d+)%,?(?:\\s*\\(\\d+\\/\\d+\\)\\s*,?)?)?(\\s*(?:' +
+      'damage|ダメージ' +
+      '))?\\s+(?<damage>(:?(:?\\d+d)?\\d+(\\s*/\\s*|\\s*[+-]\\s*(?:' +
+      keys['ja'].fulldb +
+      '|' +
+      keys['ja'].halfdb +
+      ')\\s*|\\s*[+-]\\s*(:?\\d+d)?\\d+)*)+)\\)?',
+    weaponDodge:
+      '(?<name>' +
+      'Dodge|回避' +
+      ')(\\s*:)?\\s+\\(?(?<percentage>\\d+)\\)?\\s*%?(?:\\s*\\(\\d+\\/\\d+\\))?',
+    skill:
+      '^(?<name>[:\\*.\\s' +
+      nameCharacters +
+      ']+(?<!' +
+      'The player has|but they regenerate' +
+      '))\\s+\\(?(?<percentage>\\d+)[^d]%?\\)?(\\s*\\(\\d+/\\d+\\))?[\\.,、]?\\s*',
+    guessStartCombat: '(^|(?<!,)\n)(' + '近接戦闘|射撃技能|Brawl|Bite' + ')',
+    name: '^(?<name>[\\.\\s' + nameCharacters + ']+)[,、\\s\n]+',
+    sections:
+      '(' +
+      keys['ja'].sectionCombats +
+      '|' +
+      keys['ja'].sectionSkills +
+      '|' +
+      keys['ja'].sectionLangauges +
+      '|' +
+      keys['ja'].sectionSpells +
       ')'
   }
 }
