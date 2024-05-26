@@ -43,7 +43,7 @@ export class CoC7ActorImporter {
     return s
       .replace(/(\n|\r)/g, ' ')
       .replace(/^\s*/, '')
-      .replace(/\s*\.?\s*\.?$/, '')
+      .replace(/\s*[\.。]?\s*[\.。]?$/, '')
   }
 
   /**
@@ -78,7 +78,7 @@ export class CoC7ActorImporter {
     s = s
       .trim()
       .split('\n')
-      .map(text => text.trim().replace(/^[,.\s]+$/, ''))
+      .map(text => text.trim().replace(/^[,.\s、。]+$/, ''))
       .filter(text => text)
       .join('</p><p>')
     if (s.length === 0) {
@@ -322,6 +322,8 @@ export class CoC7ActorImporter {
     if (breaks.length > 1) {
       text = breaks[0]
     }
+    text = text.replace(/\s*[（(]/g, ' (')
+      .replace(/[)）]\s*/g, ') ')
     let skill
     let maxLoops = 40
     do {
@@ -356,11 +358,11 @@ export class CoC7ActorImporter {
     if (text.trim().length === 0) {
       return
     }
-    const breaks = text.split(/\.\r?\n/)
+    const breaks = text.split(/[\.]\r?\n/)
     if (breaks.length > 1) {
       text = breaks[0]
     }
-    const spellsArr = text.replace(/([\n\r]+)/g, ' ').split(/(?<!\([^)]+),/)
+    const spellsArr = text.replace(/([\n\r]+)/g, ' ').split(/(?<!\([^)]+)[,、]/)
     this.text = this.text.replace(text.trim(), '\n')
     for (const spell of spellsArr) {
       if (typeof this.parsed.spells === 'undefined') {
@@ -854,7 +856,7 @@ export class CoC7ActorImporter {
           items.push(
             CoCActor.emptySkill(skill.name, skill.value, {
               img: CoC7Item.iconLanguage,
-              specialization: 'Language'
+              specialization: '言語'
             })
           )
         }
