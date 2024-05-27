@@ -40,10 +40,18 @@ export class CoC7ActorImporter {
    * @returns {String} the cleaned string
    */
   cleanString (s) {
+    if (this.keys.description === 'CoC7.Japanese') {
+      return s
+        .replace(/(\n|\r)/g, ' ')
+        .replace(/^\s*/, '')
+        .replace(/\s*[(（]\s*/, ' (')
+        .replace(/\s*[)）]\s*/, ')')
+        .replace(/\s*[.。]?\s*[.。]?$/, '')
+    }
     return s
       .replace(/(\n|\r)/g, ' ')
       .replace(/^\s*/, '')
-      .replace(/\s*[\.。]?\s*[\.。]?$/, '')
+      .replace(/\s*\.?\s*\.?$/, '')
   }
 
   /**
@@ -322,8 +330,11 @@ export class CoC7ActorImporter {
     if (breaks.length > 1) {
       text = breaks[0]
     }
-    text = text.replace(/\s*[（(]/g, ' (')
-      .replace(/[)）]\s*/g, ') ')
+
+    // if (this.keys.description === 'CoC7.Japanese') {
+    //   text = text.replace(/\s*[(（]\s*/g, ' (').replace(/\s*[)）]\s*/g, ') ')
+    // }
+
     let skill
     let maxLoops = 40
     do {
@@ -358,7 +369,7 @@ export class CoC7ActorImporter {
     if (text.trim().length === 0) {
       return
     }
-    const breaks = text.split(/[\.]\r?\n/)
+    const breaks = text.split(/\.\r?\n/)
     if (breaks.length > 1) {
       text = breaks[0]
     }
@@ -783,7 +794,7 @@ export class CoC7ActorImporter {
       }
     }
     if (typeof pc.sanLoss !== 'undefined') {
-      const [passed, failed] = pc.sanLoss.split('/')
+      const [passed, failed] = pc.sanLoss.split(/[\/／]/)
       data.special.sanLoss = {
         checkPassed: passed,
         checkFailled: failed
@@ -856,7 +867,7 @@ export class CoC7ActorImporter {
           items.push(
             CoCActor.emptySkill(skill.name, skill.value, {
               img: CoC7Item.iconLanguage,
-              specialization: '言語'
+              specialization: 'Language'
             })
           )
         }
