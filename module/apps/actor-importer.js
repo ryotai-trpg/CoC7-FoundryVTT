@@ -794,7 +794,7 @@ export class CoC7ActorImporter {
       }
     }
     if (typeof pc.sanLoss !== 'undefined') {
-      const [passed, failed] = pc.sanLoss.split(/[\/／]/)
+      const [passed, failed] = pc.sanLoss.split(/[/／]/)
       data.special.sanLoss = {
         checkPassed: passed,
         checkFailled: failed
@@ -867,7 +867,7 @@ export class CoC7ActorImporter {
           items.push(
             CoCActor.emptySkill(skill.name, skill.value, {
               img: CoC7Item.iconLanguage,
-              specialization: 'Language'
+              specialization: game.i18n.localize('CoC7.LanguageSpecializationName')
             })
           )
         }
@@ -895,26 +895,27 @@ export class CoC7ActorImporter {
    */
   async weaponSkill (weapon) {
     let skill = null
-    if (this.getRegEx('handgun').exec(weapon.name)) {
-      skill = await CoC7Utilities.guessItem('skill', 'Handgun', {
+    const localizedFirearm = game.i18n.localize('CoC7.FirearmSpecializationName')
+    if (this.getRegEx(this.keys.handgun).exec(weapon.name)) {
+      skill = await CoC7Utilities.guessItem('skill', localizedFirearm + ' (' + game.i18n.localize('CoC7.SkillNameHandgun') + ')', {
         combat: true,
         source: this.itemLocations
       })
       if (CONFIG.debug.CoC7Importer) {
         console.debug(`${weapon.name} uses Handgun skill: ${skill}`)
       }
-    } else if (this.getRegEx('rifle').exec(weapon.name)) {
-      skill = await CoC7Utilities.guessItem('skill', 'Rifle/Shotgun', {
+    } else if (this.getRegEx(this.keys.rifle).exec(weapon.name)) {
+      skill = await CoC7Utilities.guessItem('skill', localizedFirearm + ' (' + game.i18n.localize('CoC7.SkillNameRifleShotgun') + ')', {
         combat: true,
         source: this.itemLocations
       })
       if (!skill) {
-        skill = await CoC7Utilities.guessItem('skill', 'Rifle', {
+        skill = await CoC7Utilities.guessItem('skill', localizedFirearm + ' (' + game.i18n.localize('CoC7.SkillNameRifle') + ')', {
           combat: true,
           source: this.itemLocations
         })
         if (!skill) {
-          skill = await CoC7Utilities.guessItem('skill', 'Shotgun', {
+          skill = await CoC7Utilities.guessItem('skill', localizedFirearm + ' (' + game.i18n.localize('CoC7.SkillNameShotgun') + ')', {
             combat: true,
             source: this.itemLocations
           })
@@ -923,24 +924,24 @@ export class CoC7ActorImporter {
       if (CONFIG.debug.CoC7Importer) {
         console.debug(`${weapon.name} uses Rifle skill: ${skill}`)
       }
-    } else if (this.getRegEx('smb').exec(weapon.name)) {
-      skill = await CoC7Utilities.guessItem('skill', 'Submachine Gun', {
+    } else if (this.getRegEx(this.keys.smb).exec(weapon.name)) {
+      skill = await CoC7Utilities.guessItem('skill', localizedFirearm + ' (' + game.i18n.localize('CoC7.SkillNameSmb') + ')', {
         combat: true,
         source: this.itemLocations
       })
       if (CONFIG.debug.CoC7Importer) {
         console.debug(`${weapon.name} uses Submachine Gun skill: ${skill}`)
       }
-    } else if (this.getRegEx('machineGun').exec(weapon.name)) {
-      skill = await CoC7Utilities.guessItem('skill', 'Machine Gun', {
+    } else if (this.getRegEx(this.keys.machineGun).exec(weapon.name)) {
+      skill = await CoC7Utilities.guessItem('skill', localizedFirearm + ' (' + game.i18n.localize('CoC7.SkillnameMachineGun') + ')', {
         combat: true,
         source: this.itemLocations
       })
       if (CONFIG.debug.CoC7Importer) {
         console.debug(`${weapon.name} uses Machine Gun skill: ${skill}`)
       }
-    } else if (this.getRegEx('launched').exec(weapon.name)) {
-      skill = await CoC7Utilities.guessItem('skill', 'Launch', {
+    } else if (this.getRegEx(this.keys.launched).exec(weapon.name)) {
+      skill = await CoC7Utilities.guessItem('skill', localizedFirearm + ' (' + game.i18n.localize('CoC7.SkillnameLaunch') + ')', {
         combat: true,
         source: this.itemLocations
       })

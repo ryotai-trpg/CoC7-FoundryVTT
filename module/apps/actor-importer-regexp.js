@@ -238,12 +238,12 @@ const keys = {
       '\n(?:' + 'combat|fighting attacks|戦闘|武器' + ')[:：\n]',
     newCombatHeader: '\n' + '戦闘' + '\n',
     sectionSkills:
-      '\n(?:' + '(?:Skills|技能|【技能】)' + '(?:\\s*\\([^\\)]+\\))?)[:：\n]',
-    sectionLangauges: '\n(?:' + 'Languages|言語' + ')[:：\n]',
-    sectionSpells: '\n(?:' + 'spells|呪文' + ')[:：\n]',
+      '\n(?:' + '(?:Skills|技能)' + '\\s*(?:\\s*\\([^\\)]+\\))?)[:：\n]',
+    sectionLangauges: '\n(?:' + 'Languages|言語' + ')\\s*[:：\n]',
+    sectionSpells: '\n(?:' + 'spells|呪文' + ')\\s*[:：\n]',
     handgun:
       '(?<type>' +
-      ' 拳銃|リボルバー|デリンジャー|ベレッタ|ルガー|デザート(・|･)?イーグル|Gun|Revolver|Pistol|Handgun|Derringer|Beretta|Luger|Desert Eagle| \\.38' +
+      '拳銃|オートマチック|リボルバー|デリンジャー|ベレッタ|ルガー|デザート(・|･)?イーグル|Gun|Revolver|Pistol|Handgun|Derringer|Beretta|Luger|Desert Eagle| \\.38' +
       ')',
     rifle:
       '(?<type>' +
@@ -253,7 +253,7 @@ const keys = {
     machineGun: '(?<type>' + 'ブローニング|ヴッカース|マシンガン|Browning|Vickers' + ')',
     launched: '(?<type>' + 'モロトフ|グレネード|ダイナマイト|Molotov|Grenade|Dynamite' + ')',
     example:
-      'サンプル 太郎、27歳、学生\nSTR 75 CON 60 SIZ 80 DEX 70 APP 60 INT 80\nPOW 50 EDU 85 正気度 55 耐久力 14 ダメージ・ボーナス：1D4\nビルド：1 移動：7 マジック・ポイント：10 幸運：40 装甲：1\n1ラウンドの攻撃回数：3 正気度喪失：1D4/1D8\n戦闘\n噛みつき 50% (25/10)、ダメージ 1D6\n格闘 30% (15/6)、ダメージ 1D3+DB\nデリンジャー 40% (20/8)、ダメージ 1D8+1\n回避 50% (25/10)\n技能\n動物使い 55%、魅惑 30%、言いくるめ 25%、変装 20%、\n聞き耳 50%、薬学 45%、説得 25%、心理学 75%、\n科学 (天文学) 90%、科学 (植物学) 35%、科学 (動物学) 10%、\n目星 35%、隠密 10%。\n言語：英語 80%、アクロ語 5%。\n呪文：NPCの召喚、NPCの退散。'
+      'サンプル 太郎、27歳、記者\nSTR 75 CON 60 SIZ 80 DEX 70 APP 60 INT 80\nPOW 50 EDU 85 正気度 55 耐久力 14 ダメージ・ボーナス：1D4\nビルド：1 移動：7 マジック・ポイント：10 幸運：40 装甲：1\n1ラウンドの攻撃回数：3 正気度喪失：1D4/1D8\n戦闘\n噛みつき 50% (25/10)、ダメージ 1D6\n格闘 30% (15/6)、ダメージ 1D3+DB\nデリンジャー 40% (20/8)、ダメージ 1D8+1\n回避 50% (25/10)\n技能\n言いくるめ 25%、医学 45%、隠密 10%、\n聞き耳 50%、説得 25%、心理学 75%、\n科学 (天文学) 90%、科学 (植物学) 35%、科学 (動物学) 10%、\n動物使い 55%、変装 20%、目星 35%、魅惑 30%。\n言語：英語 80%、アクロ語 5%。\n呪文：NPCの召喚、NPCの退散。'
   }
 }
 
@@ -573,7 +573,7 @@ const translations = {
       keys.fr.sanLossNone +
       '|\\dD?[+\\d]*\\/\\dD?[+\\d]*)[,\\s\n]*',
     weapon:
-      '(^|\\n)(?<name>[.\\t ' +
+      '(^|\\n)(?<name>[.\\t\\d ' +
       nameCharacters +
       ']+)(\\**,?\\s+|\\*)(?:\\(|(?<percentage>\\d+)%,?(?:\\s*\\(\\d+\\/\\d+\\)\\s*,?)?)?(\\s*(?:' +
       'dommage|dégâts' +
@@ -815,7 +815,6 @@ const translations = {
       '(\\s*[:：])?\\s*(?<armor>' +
       keys.ja.armorNone +
       '|\\d+)[,、\\s\n]*',
-    // mov: '(?<![a-z])' + 'Move|MOV|移動率?' + '(\\s*[:：])?\\s*(?<mov>\\d+)[,、\\s\n]*',
     mov: '(?<![a-z])' + '(Move|MOV|移動率?)' + '(\\s*[:：])?\\s*(?<mov>\\d+)[,、\\s\n]*',
     lck: '(?<![a-z])' + '(Luck|幸運)' + '(\\s*[:：])?\\s*(?<lck>\\d+|-)[,、\\s\n]*',
     attacksPerRound:
@@ -831,15 +830,15 @@ const translations = {
       keys.ja.sanLossNone +
       '|\\dD?[+\\d]*[\\/／]\\dD?[+\\d]*)[,、\\s\n]*',
     weapon:
-      '(^|\\n)(?<name>[.\\t ' +
+      '(^|\\n)(?<name>[.\\t\\w ' +
       nameCharacters +
       ']+)(\\**[,、]?\\s+|\\*)(?:\\(|(?<percentage>\\d+)[%％][,、]?(?:\\s*[\\(（]\\d+[\\/／]\\d+[\\)）]\\s*[,、]?)?)?(\\s*(?:' +
       'damage|ダメージ' +
-      '))?\\s*(?<damage>(:?(:?\\d+d)?\\d+(\\s*/\\s*|\\s*[+-]\\s*(?:' +
+      '))?\\s*(?<damage>(:?\\d+[dD])?\\d+(\\s*/\\s*|\\s*[+-]\\s*(?:' +
       keys.ja.fulldb +
       '|' +
       keys.ja.halfdb +
-      ')\\s*|\\s*[+-]\\s*(:?\\d+d)?\\d+)*)+)\\)?',
+      ')\\s*|\\s*[+-]\\s*(:?\\d+[dD])?\\d+)*)\\)?',
     weaponDodge:
       '(?<name>' +
       '(Dodge|回避)' +
