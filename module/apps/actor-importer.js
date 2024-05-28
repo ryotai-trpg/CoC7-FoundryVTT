@@ -53,7 +53,7 @@ export class CoC7ActorImporter {
     return s
       .replace(/(\n|\r)/g, ' ')
       .replace(/^\s*/, '')
-      .replace(/\s*\.?\s*\.?$/, '')
+      .replace(/\s*[\.。]?\s*[\.。]?$/, '')
   }
 
   /**
@@ -332,6 +332,8 @@ export class CoC7ActorImporter {
     if (breaks.length > 1) {
       text = breaks[0]
     }
+    text = text.replace(/\s*[（(]/g, ' (')
+      .replace(/[)）]\s*/g, ') ')
     let skill
     let maxLoops = 40
     do {
@@ -366,7 +368,7 @@ export class CoC7ActorImporter {
     if (text.trim().length === 0) {
       return
     }
-    const breaks = text.split(/\.\r?\n/)
+    const breaks = text.split(/[\.]\r?\n/)
     if (breaks.length > 1) {
       text = breaks[0]
     }

@@ -776,6 +776,7 @@ const translations = {
       keys['zh-TW'].sectionSpells +
       ')'
   },
+
   ja: {
     age: '[(（]?(?<age>\\d+)' + '(\\s+)*(?:' + '歳|才' + ')[)）]?[,、\\s]*',
     /* NEW KEY BELOW - TRANSLATION REQUIRED */
@@ -843,6 +844,7 @@ const translations = {
       '(?<name>' +
       '(Dodge|回避)' +
       ')(\\s*[:：])?\\s*\\(?(?<percentage>\\d+)\\)?\\s*[%％]?(?:\\s*[\\(（]\\d+[\\/／]\\d+[\\)）])?',
+
     skill:
       '^(?<name>[:\\*.\\s' +
       nameCharacters +
