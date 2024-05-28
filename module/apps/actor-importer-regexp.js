@@ -233,7 +233,7 @@ const keys = {
     sanLossNone: 'なし',
     fulldb: '(' + 'Damage Bonus|DB|db|ダメージ(・|･)?ボーナス' + ')',
     /* NEW KEY BELOW - TRANSLATION REQUIRED */
-    halfdb: '(' + '½|1[/／]2|half' + ')',
+    halfdb: '(' + '½|half' + ')',
     sectionCombats:
       '\n(?:' + 'combat|fighting attacks|戦闘|武器' + ')[:：\n]',
     newCombatHeader: '\n' + '戦闘' + '\n',
@@ -573,7 +573,7 @@ const translations = {
       keys.fr.sanLossNone +
       '|\\dD?[+\\d]*\\/\\dD?[+\\d]*)[,\\s\n]*',
     weapon:
-      '(^|\\n)(?<name>[.\\t\\d ' +
+      '(^|\\n)(?<name>[.\\t ' +
       nameCharacters +
       ']+)(\\**,?\\s+|\\*)(?:\\(|(?<percentage>\\d+)%,?(?:\\s*\\(\\d+\\/\\d+\\)\\s*,?)?)?(\\s*(?:' +
       'dommage|dégâts' +

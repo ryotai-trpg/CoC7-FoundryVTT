@@ -332,11 +332,6 @@ export class CoC7ActorImporter {
     if (breaks.length > 1) {
       text = breaks[0]
     }
-
-    // if (this.keys.description === 'CoC7.Japanese') {
-    //   text = text.replace(/\s*[(（]\s*/g, ' (').replace(/\s*[)）]\s*/g, ') ')
-    // }
-
     let skill
     let maxLoops = 40
     do {
