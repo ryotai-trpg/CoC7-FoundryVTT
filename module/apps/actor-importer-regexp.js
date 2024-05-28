@@ -233,7 +233,7 @@ const keys = {
     sanLossNone: 'なし',
     fulldb: '(' + 'Damage Bonus|DB|db|ダメージ(・|･)?ボーナス' + ')',
     /* NEW KEY BELOW - TRANSLATION REQUIRED */
-    halfdb: '(' + '½|half' + ')',
+    halfdb: '(' + '½|1[/／]2|half' + ')',
     sectionCombats:
       '\n(?:' + 'combat|fighting attacks|戦闘|武器' + ')[:：\n]',
     newCombatHeader: '\n' + '戦闘' + '\n',
@@ -804,7 +804,7 @@ const translations = {
     db:
       '(?<![a-z])(?:' +
       keys.ja.fulldb +
-      ')(\\s*[:：])?\\s*(?<db>[+-]?\\d+(?:d\\d+|D\\d+)?|' +
+      ')(\\s*[:：])?\\s*(?<db>[+-]?\\s*\\d+(?:d\\d+|D\\d+)?|' +
       keys.ja.dbNone +
       ')[,、\\s\n]*',
     build:
@@ -849,7 +849,7 @@ const translations = {
       ']+(?<!' +
       'The player has|but they regenerate|\\d' +
       '))[\\s:：]*\\(?(?<percentage>\\d+)[^d][%％]?\\)?(\\s*[\\(（]\\d+[\\/／]\\d+[\\)）])?\\s?[\\.,、]?\\s*',
-    guessStartCombat: '(^|(?<!,)\n)(' + '近接(戦闘|格闘)|射撃|Brawl|Bite' + ')',
+    guessStartCombat: '(^|(?<!,)\n)(' + '近接(戦闘|格闘)|格闘|攻撃|素手|噛みつき|射撃|Brawl|Bite' + ')',
     name: '^(?<name>[\\.\\s' + nameCharacters + ']+)[,、\\s\n]+',
     sections:
       '(' +

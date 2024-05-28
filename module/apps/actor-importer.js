@@ -47,6 +47,8 @@ export class CoC7ActorImporter {
         .replace(/\s*[(（]\s*/, ' (')
         .replace(/\s*[)）]\s*/, ')')
         .replace(/\s*[.。]?\s*[.。]?$/, '')
+        .replace(/^[〈《]/, '')
+        .replace(/[〉》]$/, '')
     }
     return s
       .replace(/(\n|\r)/g, ' ')
