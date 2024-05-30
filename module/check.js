@@ -1421,6 +1421,9 @@ export class CoC7Check {
   }
 
   async flagForDevelopement () {
+    if (game.modules.get('dice-so-nice')?.active && !game.settings.get("dice-so-nice", "immediatelyDisplayChatMessages")) {
+      await new Promise(resolve => setTimeout(resolve, 2500))
+    }
     this.flaggedForDevelopment = true
     if (this.skill) await this.skill.flagForDevelopement()
   }
