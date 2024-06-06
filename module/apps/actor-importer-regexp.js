@@ -776,91 +776,90 @@ const translations = {
       keys['zh-TW'].sectionSpells +
       ')'
   },
-  'ja': {
-    // age: '(?<![a-z])' + 'age|年齡' + '(\\s*:)?\\s*(?<age>\\d+)[,、\\s]*',
-    age: '(?<![a-z])' + '(\\s*:)?\\s*(?<age>\\d+)[,、\\s]*' + '歳|才' + '[,、\\s]*' ,
+  ja: {
+    age: '[(（]?(?<age>\\d+)' + '(\\s+)*(?:' + '歳|才' + ')[)）]?[,、\\s]*',
     /* NEW KEY BELOW - TRANSLATION REQUIRED */
     occupation:
-      '[,、\\s]*' + '職業' + '(\\s*:)?\\s+(?<occupation>.+)[,、\\s\n]*',
-    str: '(?<![a-z])' + 'STR' + '(\\s*:)?\\s*(?<str>\\d+|-)[,、\\s\n]*',
-    con: '(?<![a-z])' + 'CON' + '(\\s*:)?\\s*(?<con>\\d+|-)[,、\\s\n]*',
-    siz: '(?<![a-z])' + 'SIZ' + '(\\s*:)?\\s*(?<siz>\\d+|-)[,、\\s\n]*',
-    int: '(?<![a-z])' + 'INT' + '(\\s*:)?\\s*(?<int>\\d+|-)[,、\\s\n]*',
-    pow: '(?<![a-z])' + 'POW' + '(\\s*:)?\\s*(?<pow>\\d+|-)[,、\\s\n]*',
-    dex: '(?<![a-z])' + 'DEX' + '(\\s*:)?\\s*(?<dex>\\d+|-)[,、\\s\n]*',
-    app: '(?<![a-z])' + 'APP' + '(\\s*:)?\\s*(?<app>\\d+|-)[,、\\s\n]*',
-    edu: '(?<![a-z])' + 'EDU' + '(\\s*:)?\\s*(?<edu>\\d+|-)[,、\\s\n]*',
+      '[,、\\s]*' + '(職業)?' + '(\\s*[:：])?\\s+(?<occupation>.+)[,、\\s\n]*',
+    str: '(?<![a-z])' + 'STR' + '(\\s*[:：])?\\s*(?<str>\\d+|-)[,、\\s\n]*',
+    con: '(?<![a-z])' + 'CON' + '(\\s*[:：])?\\s*(?<con>\\d+|-)[,、\\s\n]*',
+    siz: '(?<![a-z])' + 'SIZ' + '(\\s*[:：])?\\s*(?<siz>\\d+|-)[,、\\s\n]*',
+    int: '(?<![a-z])' + 'INT' + '(\\s*[:：])?\\s*(?<int>\\d+|-)[,、\\s\n]*',
+    pow: '(?<![a-z])' + 'POW' + '(\\s*[:：])?\\s*(?<pow>\\d+|-)[,、\\s\n]*',
+    dex: '(?<![a-z])' + 'DEX' + '(\\s*[:：])?\\s*(?<dex>\\d+|-)[,、\\s\n]*',
+    app: '(?<![a-z])' + 'APP' + '(\\s*[:：])?\\s*(?<app>\\d+|-)[,、\\s\n]*',
+    edu: '(?<![a-z])' + 'EDU' + '(\\s*[:：])?\\s*(?<edu>\\d+|-)[,、\\s\n]*',
     san:
       '(?<![a-z])(?:' +
-      'SAN|Sanity|正気度' +
-      ')(\\s*:)?\\s*(?<san>\\d+|-)[,、\\s\n]*',
+      '(SAN|Sanity|正気度)' +
+      ')(\\s*[:：])?\\s*(?<san>\\d+|-)[,、\\s\n]*',
     hp:
       '(?<![a-z])(?:' +
-      'HP|Hit points|耐久力' +
-      ')(\\s*:)?\\s*(?<hp>\\d+|-)[,、\\s\n]*',
+      '(HP|Hit points|耐久力|ヒット(・|･)?ポイント)' +
+      ')(\\s*[:：])?\\s*(?<hp>\\d+|-)[,、\\s\n]*',
     mp:
       '(?<![a-z])(?:' +
-      'MP|Magic points|マジック・ポイント|マジックポイント' +
-      ')(\\s*:)?\\s*(?<mp>\\d+|-)[,、\\s\n]*',
+      '(MP|Magic points|マジック(・|･)?ポイント)' +
+      ')(\\s*[:：])?\\s*(?<mp>\\d+|-)[,、\\s\n]*',
     db:
       '(?<![a-z])(?:' +
-      keys['ja'].fulldb +
-      ')(\\s*:)?\\s*(?<db>[+-]?\\d+(?:d\\d+|D\\d+)?|' +
-      keys['ja'].dbNone +
+      keys.ja.fulldb +
+      ')(\\s*[:：])?\\s*(?<db>[+-]?\\s*\\d+(?:d\\d+|D\\d+)?|' +
+      keys.ja.dbNone +
       ')[,、\\s\n]*',
     build:
-      '(?<![a-z])' + 'Build|ビルド' + '(\\s*:)?\\s*(?<build>[+-]?\\d+)[,、\\s\n]*',
+      '(?<![a-z])' + '(Build|ビルド)' + '(\\s*[:：])?\\s*(?<build>[+-]?\\d+)[,、\\s\n]*',
     armor:
       '(?<![a-z])' +
-      'Armor|装甲' +
-      '(\\s*:)?\\s*(?<armor>' +
-      keys['ja'].armorNone +
+      '(Armor|装甲)' +
+      '(\\s*[:：])?\\s*(?<armor>' +
+      keys.ja.armorNone +
       '|\\d+)[,、\\s\n]*',
-    mov: '(?<![a-z])' + 'Move|MOV|Mov|移動' + '(\\s*:)?\\s*(?<mov>\\d+)[,、\\s\n]*',
-    lck: '(?<![a-z])' + 'Luck|幸運' + '(\\s*:)?\\s*(?<lck>\\d+|-)[,、\\s\n]*',
+    mov: '(?<![a-z])' + '(Move|MOV|移動率?)' + '(\\s*[:：])?\\s*(?<mov>\\d+)[,、\\s\n]*',
+    lck: '(?<![a-z])' + '(Luck|幸運)' + '(\\s*[:：])?\\s*(?<lck>\\d+|-)[,、\\s\n]*',
     attacksPerRound:
       '(?<![a-z])(?:' +
-      'Attacks per round|# Attacks|1ラウンドの攻撃回数' +
-      ')(\\s*:)?\\s*(?<attacksPerRound>' +
-      keys['ja'].attacksPerRoundNone +
+      '(Attacks per round|# Attacks|((1|1 |１)ラウンドの)?攻撃回数)' +
+      ')(\\s*[:：])?\\s*(?<attacksPerRound>' +
+      keys.ja.attacksPerRoundNone +
       '|\\d+(?!d))[,、\\s\n]*',
     sanLoss:
       '(?<![a-z])(?:' +
-      'Sanity loss|SAN loss|正気度喪失|SAN喪失|SAN値喪失' +
-      ')(\\s*:)?\\s*(?<sanLoss>' +
-      keys['ja'].sanLossNone +
-      '|\\dD?[+\\d]*\\/\\dD?[+\\d]*)[,、\\s\n]*',
+      '(Sanity loss|SAN loss|正気度喪失)' +
+      ')(\\s*[:：]\\D*)?\\s*(?<sanLoss>' +
+      keys.ja.sanLossNone +
+      '|\\dD?[+\\d]*[\\/／]\\dD?[+\\d]*)[,、\\s\n]*',
     weapon:
-      '(^|\\n)(?<name>[.\\t ' +
+      '(^|\\n)(?<name>[.\\t\\w ' +
       nameCharacters +
-      ']+)(\\**,?\\s+|\\*)(?:\\(|(?<percentage>\\d+)%,?(?:\\s*\\(\\d+\\/\\d+\\)\\s*,?)?)?(\\s*(?:' +
+      ']+)(\\**[,、]?\\s+|\\*)(?:\\(|(?<percentage>\\d+)[%％][,、]?(?:\\s*[\\(（]\\d+[\\/／]\\d+[\\)）]\\s*[,、]?)?)?(\\s*(?:' +
       'damage|ダメージ' +
-      '))?\\s+(?<damage>(:?(:?\\d+d)?\\d+(\\s*/\\s*|\\s*[+-]\\s*(?:' +
-      keys['ja'].fulldb +
+      '))?\\s*(?<damage>(:?\\d+[dD])?\\d+(\\s*/\\s*|\\s*[+-]\\s*(?:' +
+      keys.ja.fulldb +
       '|' +
-      keys['ja'].halfdb +
-      ')\\s*|\\s*[+-]\\s*(:?\\d+d)?\\d+)*)+)\\)?',
+      keys.ja.halfdb +
+      ')\\s*|\\s*[+-]\\s*(:?\\d+[dD])?\\d+)*)\\)?',
     weaponDodge:
       '(?<name>' +
-      'Dodge|回避' +
-      ')(\\s*:)?\\s+\\(?(?<percentage>\\d+)\\)?\\s*%?(?:\\s*\\(\\d+\\/\\d+\\))?',
+      '(Dodge|回避)' +
+      ')(\\s*[:：])?\\s*\\(?(?<percentage>\\d+)\\)?\\s*[%％]?(?:\\s*[\\(（]\\d+[\\/／]\\d+[\\)）])?',
     skill:
       '^(?<name>[:\\*.\\s' +
       nameCharacters +
       ']+(?<!' +
-      'The player has|but they regenerate' +
-      '))\\s+\\(?(?<percentage>\\d+)[^d]%?\\)?(\\s*\\(\\d+/\\d+\\))?[\\.,、]?\\s*',
-    guessStartCombat: '(^|(?<!,)\n)(' + '近接戦闘|射撃技能|Brawl|Bite' + ')',
+      'The player has|but they regenerate|\\d' +
+      '))[\\s:：]*\\(?(?<percentage>\\d+)[^d][%％]?\\)?(\\s*[\\(（]\\d+[\\/／]\\d+[\\)）])?\\s?[\\.,、]?\\s*',
+    guessStartCombat: '(^|(?<!,)\n)(' + '近接(戦闘|格闘)|格闘|攻撃|素手|噛みつき|射撃|Brawl|Bite' + ')',
     name: '^(?<name>[\\.\\s' + nameCharacters + ']+)[,、\\s\n]+',
     sections:
       '(' +
-      keys['ja'].sectionCombats +
+      keys.ja.sectionCombats +
       '|' +
-      keys['ja'].sectionSkills +
+      keys.ja.sectionSkills +
       '|' +
-      keys['ja'].sectionLangauges +
+      keys.ja.sectionLangauges +
       '|' +
-      keys['ja'].sectionSpells +
+      keys.ja.sectionSpells +
       ')'
   }
 }
