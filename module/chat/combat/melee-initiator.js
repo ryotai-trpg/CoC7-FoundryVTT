@@ -55,6 +55,7 @@ export class CoC7MeleeInitiator extends ChatCardActor {
     // if ( this.isBlind ) chatData['blind'] = true;
     chatData.blind = false
 
+
     const chatMessage = await ChatMessage.create(chatData)
 
     return chatMessage
@@ -105,6 +106,9 @@ export class CoC7MeleeInitiator extends ChatCardActor {
     if (this.diceModifier) check.diceModifier = this.diceModifier
 
     await check.roll()
+
+    if (game.user.isGM) game.settings.set('core', 'rollMode', 'selfroll')
+
     this.check = check
     this.rolled = true
     this.resolved = true
@@ -177,6 +181,7 @@ export class CoC7MeleeInitiator extends ChatCardActor {
       const resolutionMessage = await resolutionCard.preCreateMessage()
       this.resolutionCard = resolutionMessage.id
     }
+    if (game.user.isGM) game.settings.set('core', 'rollMode', 'publicroll')
     await this.updateChatCard()
   }
 
