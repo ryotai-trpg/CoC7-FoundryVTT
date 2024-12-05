@@ -2,23 +2,23 @@
 
 Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry VTT better! Below is a list of translations keys on existing files that still need translated, based on `en.json`.
 
-[cn.json (428 untranslated strings)](#cnjson)
+[cn.json (452 untranslated strings)](#cnjson)
 
-[cs.json (613 untranslated strings)](#csjson)
+[cs.json (637 untranslated strings)](#csjson)
 
-[ko.json (210 untranslated strings)](#kojson)
+[ko.json (234 untranslated strings)](#kojson)
 
-[pt-BR.json (158 untranslated strings)](#ptbrjson)
+[pt-BR.json (182 untranslated strings)](#ptbrjson)
 
-[ru.json (80 untranslated strings)](#rujson)
+[ru.json (104 untranslated strings)](#rujson)
 
-[sv.json (396 untranslated strings)](#svjson)
+[sv.json (420 untranslated strings)](#svjson)
 
-[zh-TW.json (57 untranslated strings)](#zhtwjson)
+[zh-TW.json (81 untranslated strings)](#zhtwjson)
 
 
 ## cn.json
-428 untranslated strings
+452 untranslated strings
 ```
 "CoC7.ActorIsTokenHint": "Actor is a token",
 "CoC7.ActorDataLinked": "Actor data are linked",
@@ -34,6 +34,7 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.Restart": "Restart",
 "CoC7.Reset": "Reset",
 "CoC7.Initiative": "Initiative",
+"CoC7.CastHidden": "Cast Hidden",
 "CoC7.PenaltyDice": "Penalty Dice",
 "CoC7.LuckNotEnough": "{name} didn't have enough luck to pass the check",
 "CoC7.UpgradeSuccessWithLuck": "Upgrade to {difficultyName} success for {luckToSpend} luck.",
@@ -140,6 +141,8 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.SanityLossTypeValue": "Sanity points lost",
 "CoC7.SanityLossEncounter": "Sanity loss encounter",
 "CoC7.SanityLossImmunity": "Sanity loss immunity",
+"CoC7.SANLossPass": "pass",
+"CoC7.SANLossFail": "fail",
 "CoC7.AlreadyEncountered": "Already encountered",
 "CoC7.AlreadyEncounteredInformation": "Already encountered: {reason} lost {lost}/{max}",
 "CoC7.MaxPossibleSanLoss": "Max Possible loss",
@@ -213,6 +216,8 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.OpenObstacleResolutionCard": "Start obstacle resolution flow card.",
 "CoC7.AddBonusDie": "Add bonus die",
 "CoC7.RemoveBonusDie": "Remove bonus die",
+"CoC7.AdditionalBonusDie": "Additional Bonus Die",
+"CoC7.AdditionalPenaltyDie": "Additional Penalty Die",
 "CoC7.DecreaseMovementAction": "Decrease movement action",
 "CoC7.IncreaseMovementAction": "Increase movement action",
 "CoC7.CautiousApproach": "Take cautious approach",
@@ -324,6 +329,8 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "SETTINGS.TrustedCanModfyChatCardHint": "Enabling this setting will give permission to trusted users to select options on chat card. The GM only section will still not be visible to them",
 "SETTINGS.TrustedCanSeeChatCard": "Allow trusted user to see GM only sections",
 "SETTINGS.TrustedCanSeeChatCardHint": "Enabling this setting will give permission to trusted users to see GM only section on chat card. Use this with caution!",
+"SETTINGS.allowMythosHardenedTitle": "Mythos Hardened",
+"SETTINGS.allowMythosHardenedHint": "Allow Mythos Hardened sanity loss reductions",
 "SETTINGS.TokenDropMode": "When creating NPC :",
 "SETTINGS.TokenDropModeHint": "Define the default behavior when an NPC with rollable characteristics or skills is dropped on a scene.",
 "SETTINGS.TokenDropModeAsk": "Ask what to do",
@@ -429,6 +436,17 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.CoCIDFlag.error.documents-not-found": "Documents were not found in world or Compendia matching the CoC IDs ({cocids}), language "{lang}", and era "{era}". Please check your Era for the world setting.",
 "CoC7.CoCIDBatch.title": "Batch set System ID (CoC ID)",
 "CoC7.CoCIDBatch.summary": "The CoC7 System has introduced a System ID (CoC ID). This allows the system to identify FoundryVTT documents for example skills. This page will allow you to set the id for existing {type} documents. The System ID should use the English translation of the name to support localization across all languages.",
+"CoC7.ActorCoCIDItemsBest": "CoC ID: Actor Item replacement",
+"CoC7.ActorCoCIDItemsWarning": "This action can not be undone, please backup your world before updating your Actors",
+"CoC7.ActorCoCIDItemsWhich": "Check Item's CoC ID in active compendiums, world compendiums, and Items directory replacing the Actor's Items with the best choice based on these rules",
+"CoC7.ActorCoCIDItemsRules1": "The Item must match the the current era "{era}" or have no eras selected",
+"CoC7.ActorCoCIDItemsRules2": "Check Item's that match the language "{lang}" or "English" if no translated Items exist",
+"CoC7.ActorCoCIDItemsRules3": "Select the Item with the highest priority",
+"CoC7.ActorCoCIDItemsSceneTokens": "Update all tokens on this scene",
+"CoC7.ActorCoCIDItemsUnlinkedToken": "Update unlinked Actor in directory for each Token first",
+"CoC7.ActorCoCIDItemsActorSheets": "Update open Actor sheets",
+"CoC7.ActorCoCIDItemsActorDirectory": "Update all Actors in directory",
+"CoC7.ActorCoCIDItemsUpdate": "Update",
 "CoC7.TokenCreationRoll.Title": "Rollable detected",
 "CoC7.TokenCreationRoll.Prompt": "This token has rollables characteristics or skills.<br>What do you want to do ?",
 "CoC7.TokenCreationRoll.ButtonRoll": "Roll all",
@@ -447,10 +465,16 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.ErrorRollAlreadyCompleted": "This roll has already been completed",
 "CoC7.ErrorNoActorPermission": "You are not the Owner of this Actor",
 "CoC7.ErrorCombinedRollsRequireSingleActor": "You can not have more than one actor in a combined roll",
-"CoC7.ErrorOpposedRollsLimitedToTwoActors": "An opposed card requires two actors"
+"CoC7.ErrorOpposedRollsLimitedToTwoActors": "An opposed card requires two actors",
+"CoC7.PauseName": "Time Stop",
+"CoC7.ClickableEvents.MouseOver.Title": "Permission to click",
+"CoC7.ClickableEvents.MouseOver.Hint": "Return boolean if should allow click and show mouse cursor",
+"CoC7.ClickableEvents.LeftClick.Title": "Left Click Script",
+"CoC7.ClickableEvents.RightClick.Title": "Right Click Script",
+"TYPES.RegionBehavior.coc7ClickableEvents": "Clickable Events"
 ```
 ## cs.json
-613 untranslated strings
+637 untranslated strings
 ```
 "CoC7.Entities.Character": "Character",
 "CoC7.Entities.Container": "Container",
@@ -487,6 +511,7 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.Reset": "Reset",
 "CoC7.Initiative": "Initiative",
 "CoC7.Cast": "Cast",
+"CoC7.CastHidden": "Cast Hidden",
 "CoC7.SanityCost": "Sanity Cost",
 "CoC7.PowerCost": "Power Cost",
 "CoC7.HitPointsCost": "Hit Points Cost",
@@ -622,6 +647,8 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.SanityLossTypeValue": "Sanity points lost",
 "CoC7.SanityLossEncounter": "Sanity loss encounter",
 "CoC7.SanityLossImmunity": "Sanity loss immunity",
+"CoC7.SANLossPass": "pass",
+"CoC7.SANLossFail": "fail",
 "CoC7.AlreadyEncountered": "Already encountered",
 "CoC7.AlreadyEncounteredInformation": "Already encountered: {reason} lost {lost}/{max}",
 "CoC7.MaxPossibleSanLoss": "Max Possible loss",
@@ -695,6 +722,8 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.OpenObstacleResolutionCard": "Start obstacle resolution flow card.",
 "CoC7.AddBonusDie": "Add bonus die",
 "CoC7.RemoveBonusDie": "Remove bonus die",
+"CoC7.AdditionalBonusDie": "Additional Bonus Die",
+"CoC7.AdditionalPenaltyDie": "Additional Penalty Die",
 "CoC7.DecreaseMovementAction": "Decrease movement action",
 "CoC7.IncreaseMovementAction": "Increase movement action",
 "CoC7.CautiousApproach": "Take cautious approach",
@@ -921,6 +950,8 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "SETTINGS.TrustedCanModfyChatCardHint": "Enabling this setting will give permission to trusted users to select options on chat card. The GM only section will still not be visible to them",
 "SETTINGS.TrustedCanSeeChatCard": "Allow trusted user to see GM only sections",
 "SETTINGS.TrustedCanSeeChatCardHint": "Enabling this setting will give permission to trusted users to see GM only section on chat card. Use this with caution!",
+"SETTINGS.allowMythosHardenedTitle": "Mythos Hardened",
+"SETTINGS.allowMythosHardenedHint": "Allow Mythos Hardened sanity loss reductions",
 "SETTINGS.displayPlayerNameOnSheet": "Display player's name on sheet",
 "SETTINGS.OverrideGameArtwork": "Override game Artwork",
 "SETTINGS.OverrideGameArtworkHint": "!!RESTART REQUIRED!! gives access to advance game config, leave blank for default",
@@ -1046,6 +1077,17 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.CoCIDFlag.error.documents-not-found": "Documents were not found in world or Compendia matching the CoC IDs ({cocids}), language "{lang}", and era "{era}". Please check your Era for the world setting.",
 "CoC7.CoCIDBatch.title": "Batch set System ID (CoC ID)",
 "CoC7.CoCIDBatch.summary": "The CoC7 System has introduced a System ID (CoC ID). This allows the system to identify FoundryVTT documents for example skills. This page will allow you to set the id for existing {type} documents. The System ID should use the English translation of the name to support localization across all languages.",
+"CoC7.ActorCoCIDItemsBest": "CoC ID: Actor Item replacement",
+"CoC7.ActorCoCIDItemsWarning": "This action can not be undone, please backup your world before updating your Actors",
+"CoC7.ActorCoCIDItemsWhich": "Check Item's CoC ID in active compendiums, world compendiums, and Items directory replacing the Actor's Items with the best choice based on these rules",
+"CoC7.ActorCoCIDItemsRules1": "The Item must match the the current era "{era}" or have no eras selected",
+"CoC7.ActorCoCIDItemsRules2": "Check Item's that match the language "{lang}" or "English" if no translated Items exist",
+"CoC7.ActorCoCIDItemsRules3": "Select the Item with the highest priority",
+"CoC7.ActorCoCIDItemsSceneTokens": "Update all tokens on this scene",
+"CoC7.ActorCoCIDItemsUnlinkedToken": "Update unlinked Actor in directory for each Token first",
+"CoC7.ActorCoCIDItemsActorSheets": "Update open Actor sheets",
+"CoC7.ActorCoCIDItemsActorDirectory": "Update all Actors in directory",
+"CoC7.ActorCoCIDItemsUpdate": "Update",
 "CoC7.TokenCreationRoll.Title": "Rollable detected",
 "CoC7.TokenCreationRoll.Prompt": "This token has rollables characteristics or skills.<br>What do you want to do ?",
 "CoC7.TokenCreationRoll.ButtonRoll": "Roll all",
@@ -1064,12 +1106,19 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.ErrorRollAlreadyCompleted": "This roll has already been completed",
 "CoC7.ErrorNoActorPermission": "You are not the Owner of this Actor",
 "CoC7.ErrorCombinedRollsRequireSingleActor": "You can not have more than one actor in a combined roll",
-"CoC7.ErrorOpposedRollsLimitedToTwoActors": "An opposed card requires two actors"
+"CoC7.ErrorOpposedRollsLimitedToTwoActors": "An opposed card requires two actors",
+"CoC7.PauseName": "Time Stop",
+"CoC7.ClickableEvents.MouseOver.Title": "Permission to click",
+"CoC7.ClickableEvents.MouseOver.Hint": "Return boolean if should allow click and show mouse cursor",
+"CoC7.ClickableEvents.LeftClick.Title": "Left Click Script",
+"CoC7.ClickableEvents.RightClick.Title": "Right Click Script",
+"TYPES.RegionBehavior.coc7ClickableEvents": "Clickable Events"
 ```
 ## ko.json
-210 untranslated strings
+234 untranslated strings
 ```
 "CoC7.CustomSpecialisationLabel": "Custom label - {specialisation}",
+"CoC7.CastHidden": "Cast Hidden",
 "CoC7.RollDifficultyRegularTitle": "Regular difficulty",
 "CoC7.RollDifficultyHardTitle": "Hard difficulty",
 "CoC7.RollDifficultyExtremeTitle": "Extreme difficulty",
@@ -1139,6 +1188,10 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.MonetaryDefaultSuperRich": "Super Rich",
 "CoC7.MonetaryDefaultAristocracy": "Aristocracy",
 "CoC7.SanityLossType": "Type",
+"CoC7.SANLossPass": "pass",
+"CoC7.SANLossFail": "fail",
+"CoC7.AdditionalBonusDie": "Additional Bonus Die",
+"CoC7.AdditionalPenaltyDie": "Additional Penalty Die",
 "CoC7.ErrorTokenIncorrect": "Unable to find selected token",
 "CoC7.RemoveParticipant": "Remove participant",
 "CoC7.RemoveParticipantHint": "Participant will be completely removed from the chase",
@@ -1161,6 +1214,8 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.Settings.DropCoCID.UseCoCID": "Use CoC ID Where Possible",
 "CoC7.Settings.DropCoCID.IgnoreCoCID": "Do Not Use CoC ID",
 "SETTINGS.DefaultDifficulty": "Default check difficulty",
+"SETTINGS.allowMythosHardenedTitle": "Mythos Hardened",
+"SETTINGS.allowMythosHardenedHint": "Allow Mythos Hardened sanity loss reductions",
 "SETTINGS.TokenDropMode": "When creating NPC :",
 "SETTINGS.TokenDropModeHint": "Define the default behavior when an NPC with rollable characteristics or skills is dropped on a scene.",
 "SETTINGS.TokenDropModeAsk": "Ask what to do",
@@ -1260,6 +1315,17 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.CoCIDFlag.error.documents-not-found": "Documents were not found in world or Compendia matching the CoC IDs ({cocids}), language "{lang}", and era "{era}". Please check your Era for the world setting.",
 "CoC7.CoCIDBatch.title": "Batch set System ID (CoC ID)",
 "CoC7.CoCIDBatch.summary": "The CoC7 System has introduced a System ID (CoC ID). This allows the system to identify FoundryVTT documents for example skills. This page will allow you to set the id for existing {type} documents. The System ID should use the English translation of the name to support localization across all languages.",
+"CoC7.ActorCoCIDItemsBest": "CoC ID: Actor Item replacement",
+"CoC7.ActorCoCIDItemsWarning": "This action can not be undone, please backup your world before updating your Actors",
+"CoC7.ActorCoCIDItemsWhich": "Check Item's CoC ID in active compendiums, world compendiums, and Items directory replacing the Actor's Items with the best choice based on these rules",
+"CoC7.ActorCoCIDItemsRules1": "The Item must match the the current era "{era}" or have no eras selected",
+"CoC7.ActorCoCIDItemsRules2": "Check Item's that match the language "{lang}" or "English" if no translated Items exist",
+"CoC7.ActorCoCIDItemsRules3": "Select the Item with the highest priority",
+"CoC7.ActorCoCIDItemsSceneTokens": "Update all tokens on this scene",
+"CoC7.ActorCoCIDItemsUnlinkedToken": "Update unlinked Actor in directory for each Token first",
+"CoC7.ActorCoCIDItemsActorSheets": "Update open Actor sheets",
+"CoC7.ActorCoCIDItemsActorDirectory": "Update all Actors in directory",
+"CoC7.ActorCoCIDItemsUpdate": "Update",
 "CoC7.TokenCreationRoll.Title": "Rollable detected",
 "CoC7.TokenCreationRoll.Prompt": "This token has rollables characteristics or skills.<br>What do you want to do ?",
 "CoC7.TokenCreationRoll.ButtonRoll": "Roll all",
@@ -1278,11 +1344,18 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.ErrorRollAlreadyCompleted": "This roll has already been completed",
 "CoC7.ErrorNoActorPermission": "You are not the Owner of this Actor",
 "CoC7.ErrorCombinedRollsRequireSingleActor": "You can not have more than one actor in a combined roll",
-"CoC7.ErrorOpposedRollsLimitedToTwoActors": "An opposed card requires two actors"
+"CoC7.ErrorOpposedRollsLimitedToTwoActors": "An opposed card requires two actors",
+"CoC7.PauseName": "Time Stop",
+"CoC7.ClickableEvents.MouseOver.Title": "Permission to click",
+"CoC7.ClickableEvents.MouseOver.Hint": "Return boolean if should allow click and show mouse cursor",
+"CoC7.ClickableEvents.LeftClick.Title": "Left Click Script",
+"CoC7.ClickableEvents.RightClick.Title": "Right Click Script",
+"TYPES.RegionBehavior.coc7ClickableEvents": "Clickable Events"
 ```
 ## pt-BR.json
-158 untranslated strings
+182 untranslated strings
 ```
+"CoC7.CastHidden": "Cast Hidden",
 "CoC7.EraRegency": "Regency Cthulhu - Standard",
 "CoC7.EraRegencyPulp": "Regency Cthulhu - Pulp",
 "CoC7.EraReignOfTerror": "Reign Of Terror",
@@ -1337,11 +1410,17 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.MonetaryDefaultSuperRich": "Super Rich",
 "CoC7.MonetaryDefaultAristocracy": "Aristocracy",
 "CoC7.SanityLossType": "Type",
+"CoC7.SANLossPass": "pass",
+"CoC7.SANLossFail": "fail",
+"CoC7.AdditionalBonusDie": "Additional Bonus Die",
+"CoC7.AdditionalPenaltyDie": "Additional Penalty Die",
 "CoC7.ErrorTokenIncorrect": "Unable to find selected token",
 "CoC7.PersonalSpecialityPlaceholder": "other skill(s) as personal or era specialties",
 "CoC7.InfoSkillAddedAtBase": "This skill {name} has been added at {percent}%",
 "CoC7.Japanese": "Japanese",
 "CoC7.System.Documentation": "View CoC7 System Manual",
+"SETTINGS.allowMythosHardenedTitle": "Mythos Hardened",
+"SETTINGS.allowMythosHardenedHint": "Allow Mythos Hardened sanity loss reductions",
 "SETTINGS.TokenDropMode": "When creating NPC :",
 "SETTINGS.TokenDropModeHint": "Define the default behavior when an NPC with rollable characteristics or skills is dropped on a scene.",
 "SETTINGS.TokenDropModeAsk": "Ask what to do",
@@ -1422,6 +1501,17 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.InvestigatorWizard.CreatingInvestigator": "Please wait while the keeper creates your investigator.",
 "CoC7.CoCIDBatch.title": "Batch set System ID (CoC ID)",
 "CoC7.CoCIDBatch.summary": "The CoC7 System has introduced a System ID (CoC ID). This allows the system to identify FoundryVTT documents for example skills. This page will allow you to set the id for existing {type} documents. The System ID should use the English translation of the name to support localization across all languages.",
+"CoC7.ActorCoCIDItemsBest": "CoC ID: Actor Item replacement",
+"CoC7.ActorCoCIDItemsWarning": "This action can not be undone, please backup your world before updating your Actors",
+"CoC7.ActorCoCIDItemsWhich": "Check Item's CoC ID in active compendiums, world compendiums, and Items directory replacing the Actor's Items with the best choice based on these rules",
+"CoC7.ActorCoCIDItemsRules1": "The Item must match the the current era "{era}" or have no eras selected",
+"CoC7.ActorCoCIDItemsRules2": "Check Item's that match the language "{lang}" or "English" if no translated Items exist",
+"CoC7.ActorCoCIDItemsRules3": "Select the Item with the highest priority",
+"CoC7.ActorCoCIDItemsSceneTokens": "Update all tokens on this scene",
+"CoC7.ActorCoCIDItemsUnlinkedToken": "Update unlinked Actor in directory for each Token first",
+"CoC7.ActorCoCIDItemsActorSheets": "Update open Actor sheets",
+"CoC7.ActorCoCIDItemsActorDirectory": "Update all Actors in directory",
+"CoC7.ActorCoCIDItemsUpdate": "Update",
 "CoC7.TokenCreationRoll.Title": "Rollable detected",
 "CoC7.TokenCreationRoll.Prompt": "This token has rollables characteristics or skills.<br>What do you want to do ?",
 "CoC7.TokenCreationRoll.ButtonRoll": "Roll all",
@@ -1440,11 +1530,18 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.ErrorRollAlreadyCompleted": "This roll has already been completed",
 "CoC7.ErrorNoActorPermission": "You are not the Owner of this Actor",
 "CoC7.ErrorCombinedRollsRequireSingleActor": "You can not have more than one actor in a combined roll",
-"CoC7.ErrorOpposedRollsLimitedToTwoActors": "An opposed card requires two actors"
+"CoC7.ErrorOpposedRollsLimitedToTwoActors": "An opposed card requires two actors",
+"CoC7.PauseName": "Time Stop",
+"CoC7.ClickableEvents.MouseOver.Title": "Permission to click",
+"CoC7.ClickableEvents.MouseOver.Hint": "Return boolean if should allow click and show mouse cursor",
+"CoC7.ClickableEvents.LeftClick.Title": "Left Click Script",
+"CoC7.ClickableEvents.RightClick.Title": "Right Click Script",
+"TYPES.RegionBehavior.coc7ClickableEvents": "Clickable Events"
 ```
 ## ru.json
-80 untranslated strings
+104 untranslated strings
 ```
+"CoC7.CastHidden": "Cast Hidden",
 "CoC7.EraReignOfTerror": "Reign Of Terror",
 "CoC7.SkillRanged": "Ranged",
 "CoC7.RangedSpecializationName": "Ranged",
@@ -1467,6 +1564,8 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.MonetaryDefaultProfessional": "Average Gentry / Wealthy Professional",
 "CoC7.MonetaryDefaultGentry": "Wealthy Gentry",
 "CoC7.MonetaryDefaultAristocracy": "Aristocracy",
+"CoC7.SANLossPass": "pass",
+"CoC7.SANLossFail": "fail",
 "CoC7.MythosAlreadyEncountered": "Award Mythos Experience (+1%)",
 "CoC7.DisregardMythosGain": "No Mythos gain",
 "CoC7.MythosGain": "Mythos gain",
@@ -1477,6 +1576,8 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.LocationNotEmpty": "You can't remove a location with an actor",
 "CoC7.LocationInit": "You can't  remove a starting location",
 "CoC7.SomethingInTheWay": "There is something in the way",
+"CoC7.AdditionalBonusDie": "Additional Bonus Die",
+"CoC7.AdditionalPenaltyDie": "Additional Penalty Die",
 "CoC7.allActors": "All Actors",
 "CoC7.restTargets": "Rest Targets",
 "CoC7.startRest": "Start Rest",
@@ -1505,12 +1606,25 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.InfoLessSkillThanOptions": "There's only {skillCount} and {optionsCount} options, adding all of them",
 "CoC7.InfoAllSkillsAlreadySelected": "All skills are already selected.",
 "CoC7.Japanese": "Japanese",
+"SETTINGS.allowMythosHardenedTitle": "Mythos Hardened",
+"SETTINGS.allowMythosHardenedHint": "Allow Mythos Hardened sanity loss reductions",
 "SETTINGS.TokenDropMode": "When creating NPC :",
 "SETTINGS.TokenDropModeHint": "Define the default behavior when an NPC with rollable characteristics or skills is dropped on a scene.",
 "SETTINGS.TokenDropModeAsk": "Ask what to do",
 "SETTINGS.TokenDropModeRoll": "Roll what you can",
 "SETTINGS.TokenDropModeAverage": "Average rolls",
 "SETTINGS.TokenDropModeIgnore": "Do nothing",
+"CoC7.ActorCoCIDItemsBest": "CoC ID: Actor Item replacement",
+"CoC7.ActorCoCIDItemsWarning": "This action can not be undone, please backup your world before updating your Actors",
+"CoC7.ActorCoCIDItemsWhich": "Check Item's CoC ID in active compendiums, world compendiums, and Items directory replacing the Actor's Items with the best choice based on these rules",
+"CoC7.ActorCoCIDItemsRules1": "The Item must match the the current era "{era}" or have no eras selected",
+"CoC7.ActorCoCIDItemsRules2": "Check Item's that match the language "{lang}" or "English" if no translated Items exist",
+"CoC7.ActorCoCIDItemsRules3": "Select the Item with the highest priority",
+"CoC7.ActorCoCIDItemsSceneTokens": "Update all tokens on this scene",
+"CoC7.ActorCoCIDItemsUnlinkedToken": "Update unlinked Actor in directory for each Token first",
+"CoC7.ActorCoCIDItemsActorSheets": "Update open Actor sheets",
+"CoC7.ActorCoCIDItemsActorDirectory": "Update all Actors in directory",
+"CoC7.ActorCoCIDItemsUpdate": "Update",
 "CoC7.TokenCreationRoll.Rolled": "{name} characteristics and skills rolled",
 "CoC7.TokenCreationRoll.Averaged": "{name} characteristics and skills averaged",
 "CoC7.Temporary": "Temporary",
@@ -1524,10 +1638,16 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.ErrorRollAlreadyCompleted": "This roll has already been completed",
 "CoC7.ErrorNoActorPermission": "You are not the Owner of this Actor",
 "CoC7.ErrorCombinedRollsRequireSingleActor": "You can not have more than one actor in a combined roll",
-"CoC7.ErrorOpposedRollsLimitedToTwoActors": "An opposed card requires two actors"
+"CoC7.ErrorOpposedRollsLimitedToTwoActors": "An opposed card requires two actors",
+"CoC7.PauseName": "Time Stop",
+"CoC7.ClickableEvents.MouseOver.Title": "Permission to click",
+"CoC7.ClickableEvents.MouseOver.Hint": "Return boolean if should allow click and show mouse cursor",
+"CoC7.ClickableEvents.LeftClick.Title": "Left Click Script",
+"CoC7.ClickableEvents.RightClick.Title": "Right Click Script",
+"TYPES.RegionBehavior.coc7ClickableEvents": "Clickable Events"
 ```
 ## sv.json
-396 untranslated strings
+420 untranslated strings
 ```
 "CoC7.ActorIsTokenHint": "Actor is a token",
 "CoC7.ActorDataLinked": "Actor data are linked",
@@ -1541,6 +1661,7 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.Restart": "Restart",
 "CoC7.Reset": "Reset",
 "CoC7.Initiative": "Initiative",
+"CoC7.CastHidden": "Cast Hidden",
 "CoC7.PenaltyDice": "Penalty Dice",
 "CoC7.LuckNotEnough": "{name} didn't have enough luck to pass the check",
 "CoC7.UpgradeSuccessWithLuck": "Upgrade to {difficultyName} success for {luckToSpend} luck.",
@@ -1623,6 +1744,8 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.MonetaryDefaultSuperRich": "Super Rich",
 "CoC7.MonetaryDefaultAristocracy": "Aristocracy",
 "CoC7.SanityLossType": "Type",
+"CoC7.SANLossPass": "pass",
+"CoC7.SANLossFail": "fail",
 "CoC7.AlreadyEncounteredInformation": "Already encountered: {reason} lost {lost}/{max}",
 "CoC7.InsertLocation": "Insert location",
 "CoC7.RemoveLocation": "Remove location",
@@ -1694,6 +1817,8 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.OpenObstacleResolutionCard": "Start obstacle resolution flow card.",
 "CoC7.AddBonusDie": "Add bonus die",
 "CoC7.RemoveBonusDie": "Remove bonus die",
+"CoC7.AdditionalBonusDie": "Additional Bonus Die",
+"CoC7.AdditionalPenaltyDie": "Additional Penalty Die",
 "CoC7.DecreaseMovementAction": "Decrease movement action",
 "CoC7.IncreaseMovementAction": "Increase movement action",
 "CoC7.CautiousApproach": "Take cautious approach",
@@ -1801,6 +1926,8 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "SETTINGS.TrustedCanModfyChatCardHint": "Enabling this setting will give permission to trusted users to select options on chat card. The GM only section will still not be visible to them",
 "SETTINGS.TrustedCanSeeChatCard": "Allow trusted user to see GM only sections",
 "SETTINGS.TrustedCanSeeChatCardHint": "Enabling this setting will give permission to trusted users to see GM only section on chat card. Use this with caution!",
+"SETTINGS.allowMythosHardenedTitle": "Mythos Hardened",
+"SETTINGS.allowMythosHardenedHint": "Allow Mythos Hardened sanity loss reductions",
 "SETTINGS.TokenDropMode": "When creating NPC :",
 "SETTINGS.TokenDropModeHint": "Define the default behavior when an NPC with rollable characteristics or skills is dropped on a scene.",
 "SETTINGS.TokenDropModeAsk": "Ask what to do",
@@ -1906,6 +2033,17 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.CoCIDFlag.error.documents-not-found": "Documents were not found in world or Compendia matching the CoC IDs ({cocids}), language "{lang}", and era "{era}". Please check your Era for the world setting.",
 "CoC7.CoCIDBatch.title": "Batch set System ID (CoC ID)",
 "CoC7.CoCIDBatch.summary": "The CoC7 System has introduced a System ID (CoC ID). This allows the system to identify FoundryVTT documents for example skills. This page will allow you to set the id for existing {type} documents. The System ID should use the English translation of the name to support localization across all languages.",
+"CoC7.ActorCoCIDItemsBest": "CoC ID: Actor Item replacement",
+"CoC7.ActorCoCIDItemsWarning": "This action can not be undone, please backup your world before updating your Actors",
+"CoC7.ActorCoCIDItemsWhich": "Check Item's CoC ID in active compendiums, world compendiums, and Items directory replacing the Actor's Items with the best choice based on these rules",
+"CoC7.ActorCoCIDItemsRules1": "The Item must match the the current era "{era}" or have no eras selected",
+"CoC7.ActorCoCIDItemsRules2": "Check Item's that match the language "{lang}" or "English" if no translated Items exist",
+"CoC7.ActorCoCIDItemsRules3": "Select the Item with the highest priority",
+"CoC7.ActorCoCIDItemsSceneTokens": "Update all tokens on this scene",
+"CoC7.ActorCoCIDItemsUnlinkedToken": "Update unlinked Actor in directory for each Token first",
+"CoC7.ActorCoCIDItemsActorSheets": "Update open Actor sheets",
+"CoC7.ActorCoCIDItemsActorDirectory": "Update all Actors in directory",
+"CoC7.ActorCoCIDItemsUpdate": "Update",
 "CoC7.TokenCreationRoll.Title": "Rollable detected",
 "CoC7.TokenCreationRoll.Prompt": "This token has rollables characteristics or skills.<br>What do you want to do ?",
 "CoC7.TokenCreationRoll.ButtonRoll": "Roll all",
@@ -1924,11 +2062,18 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.ErrorRollAlreadyCompleted": "This roll has already been completed",
 "CoC7.ErrorNoActorPermission": "You are not the Owner of this Actor",
 "CoC7.ErrorCombinedRollsRequireSingleActor": "You can not have more than one actor in a combined roll",
-"CoC7.ErrorOpposedRollsLimitedToTwoActors": "An opposed card requires two actors"
+"CoC7.ErrorOpposedRollsLimitedToTwoActors": "An opposed card requires two actors",
+"CoC7.PauseName": "Time Stop",
+"CoC7.ClickableEvents.MouseOver.Title": "Permission to click",
+"CoC7.ClickableEvents.MouseOver.Hint": "Return boolean if should allow click and show mouse cursor",
+"CoC7.ClickableEvents.LeftClick.Title": "Left Click Script",
+"CoC7.ClickableEvents.RightClick.Title": "Right Click Script",
+"TYPES.RegionBehavior.coc7ClickableEvents": "Clickable Events"
 ```
 ## zh-TW.json
-57 untranslated strings
+81 untranslated strings
 ```
+"CoC7.CastHidden": "Cast Hidden",
 "CoC7.EraRegency": "Regency Cthulhu - Standard",
 "CoC7.EraRegencyPulp": "Regency Cthulhu - Pulp",
 "CoC7.EraReignOfTerror": "Reign Of Terror",
@@ -1954,11 +2099,17 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.MonetaryDefaultGentry": "Wealthy Gentry",
 "CoC7.MonetaryDefaultAristocracy": "Aristocracy",
 "CoC7.SanityLossType": "Type",
+"CoC7.SANLossPass": "pass",
+"CoC7.SANLossFail": "fail",
+"CoC7.AdditionalBonusDie": "Additional Bonus Die",
+"CoC7.AdditionalPenaltyDie": "Additional Penalty Die",
 "CoC7.ErrorTokenIncorrect": "Unable to find selected token",
 "CoC7.PersonalSpecialityPlaceholder": "other skill(s) as personal or era specialties",
 "CoC7.InfoSkillAddedAtBase": "This skill {name} has been added at {percent}%",
 "CoC7.Japanese": "Japanese",
 "CoC7.System.Documentation": "View CoC7 System Manual",
+"SETTINGS.allowMythosHardenedTitle": "Mythos Hardened",
+"SETTINGS.allowMythosHardenedHint": "Allow Mythos Hardened sanity loss reductions",
 "SETTINGS.TokenDropMode": "When creating NPC :",
 "SETTINGS.TokenDropModeHint": "Define the default behavior when an NPC with rollable characteristics or skills is dropped on a scene.",
 "SETTINGS.TokenDropModeAsk": "Ask what to do",
@@ -1967,6 +2118,17 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "SETTINGS.TokenDropModeIgnore": "Do nothing",
 "SETTINGS.SceneDistanceNotCalcualtedNoError": "Don't show error for ranged distance",
 "SETTINGS.SceneDistanceNotCalcualtedNoErrorHint": "When starting a ranged combat if playing theatre of the mind do not show the unable to calculate distance message.",
+"CoC7.ActorCoCIDItemsBest": "CoC ID: Actor Item replacement",
+"CoC7.ActorCoCIDItemsWarning": "This action can not be undone, please backup your world before updating your Actors",
+"CoC7.ActorCoCIDItemsWhich": "Check Item's CoC ID in active compendiums, world compendiums, and Items directory replacing the Actor's Items with the best choice based on these rules",
+"CoC7.ActorCoCIDItemsRules1": "The Item must match the the current era "{era}" or have no eras selected",
+"CoC7.ActorCoCIDItemsRules2": "Check Item's that match the language "{lang}" or "English" if no translated Items exist",
+"CoC7.ActorCoCIDItemsRules3": "Select the Item with the highest priority",
+"CoC7.ActorCoCIDItemsSceneTokens": "Update all tokens on this scene",
+"CoC7.ActorCoCIDItemsUnlinkedToken": "Update unlinked Actor in directory for each Token first",
+"CoC7.ActorCoCIDItemsActorSheets": "Update open Actor sheets",
+"CoC7.ActorCoCIDItemsActorDirectory": "Update all Actors in directory",
+"CoC7.ActorCoCIDItemsUpdate": "Update",
 "CoC7.TokenCreationRoll.Title": "Rollable detected",
 "CoC7.TokenCreationRoll.Prompt": "This token has rollables characteristics or skills.<br>What do you want to do ?",
 "CoC7.TokenCreationRoll.ButtonRoll": "Roll all",
@@ -1985,5 +2147,11 @@ Thank you for being interested in making Call of Cthulhu 7th Edition for Foundry
 "CoC7.ErrorRollAlreadyCompleted": "This roll has already been completed",
 "CoC7.ErrorNoActorPermission": "You are not the Owner of this Actor",
 "CoC7.ErrorCombinedRollsRequireSingleActor": "You can not have more than one actor in a combined roll",
-"CoC7.ErrorOpposedRollsLimitedToTwoActors": "An opposed card requires two actors"
+"CoC7.ErrorOpposedRollsLimitedToTwoActors": "An opposed card requires two actors",
+"CoC7.PauseName": "Time Stop",
+"CoC7.ClickableEvents.MouseOver.Title": "Permission to click",
+"CoC7.ClickableEvents.MouseOver.Hint": "Return boolean if should allow click and show mouse cursor",
+"CoC7.ClickableEvents.LeftClick.Title": "Left Click Script",
+"CoC7.ClickableEvents.RightClick.Title": "Right Click Script",
+"TYPES.RegionBehavior.coc7ClickableEvents": "Clickable Events"
 ```
