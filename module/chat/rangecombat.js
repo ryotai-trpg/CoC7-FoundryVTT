@@ -45,6 +45,11 @@ export class CoC7RangeInitiator {
     if (actorKey) {
       const actor = chatHelper.getActorFromKey(actorKey) // REFACTORING (2)
       this.token = chatHelper.getTokenFromKey(actorKey) // REFACTORING (2)
+
+      if (!actor.isToken && this.token.actorLink) {
+        this.token = canvas.tokens.ownedTokens.find(token => token.document.actorId == actorKey)
+      }
+
       if (this.token) this.tokenKey = actor.tokenKey
       if (itemId) {
         const weapon = actor.items.get(itemId)
