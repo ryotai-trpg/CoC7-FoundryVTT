@@ -1321,7 +1321,7 @@
   "CoC7.ErrorNoActorPermission": "あなたはこのアクターの所有者ではありません",
   "CoC7.ErrorCombinedRollsRequireSingleActor": "複合ロールに１人より多いアクターは参加できません",
   "CoC7.ErrorOpposedRollsLimitedToTwoActors": "対抗カードには２名のアクターが必要です",
-  "CoC7.PauseName": "時間停止",
+  "CoC7.PauseName": "一時停止",
   "CoC7.ClickableEvents.MouseOver.Title": "クリックの許可",
   "CoC7.ClickableEvents.MouseOver.Hint": "クリック許可とマウスカーソル表示にbooleanを返す",
   "CoC7.ClickableEvents.LeftClick.Title": "左クリックのスクリプト",
