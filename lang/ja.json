@@ -1,30 +1,5 @@
 {
   "CoC7.title": "新クトゥルフ神話TRPG",
-<<<<<<< HEAD
-  "TYPES.Actor.character": "キャラクター",
-  "TYPES.Actor.container": "荷物",
-  "TYPES.Actor.creature": "クリーチャー",
-  "TYPES.Actor.npc": "NPC",
-  "TYPES.Actor.vehicle": "乗り物",
-  "CoC7.ActorIsTokenHint": "アクターはコマである。",
-  "CoC7.ActorDataLinked": "アクターデータがリンクされた。",
-  "CoC7.ActorDataNotLinked": "アクターデータがリンクされていない。",
-  "CoC7.ActorIsSyntheticActor": "アクターは複製である (アクターのインスタンツ)",
-  "TYPES.Item.archetype": "アーキタイプ",
-  "TYPES.Item.armor": "装甲",
-  "TYPES.Item.book": "本",
-  "TYPES.Item.chase": "チェイス",
-  "TYPES.Item.experiencePackage": "経験パッケージ",
-  "TYPES.Item.item": "アイテム",
-  "TYPES.Item.occupation": "職業",
-  "TYPES.Item.setup": "初期設定",
-  "TYPES.Item.skill": "技能",
-  "TYPES.Item.spell": "呪文",
-  "TYPES.Item.status": "状態",
-  "TYPES.Item.talent": "特徴",
-  "TYPES.Item.weapon": "武器",
-=======
-
   "CoC7.Entities.Character": "キャラクター",
   "CoC7.Entities.Container": "荷物",
   "CoC7.Entities.Creature": "クリーチャー",
@@ -47,8 +22,6 @@
   "CoC7.Entities.Status": "状態",
   "CoC7.Entities.Talent": "タレント",
   "CoC7.Entities.Weapon": "武器",
-
->>>>>>> 6e4c6658 (アクター→キャラクター)
   "CHARAC.STR": "STR",
   "CHARAC.Strengh": "STR [筋力]",
   "CHARAC.Strength": "STR [筋力]",
@@ -828,7 +801,7 @@
   "CoC7.BasicTalent": "通常",
   "CoC7.InsaneTalent": "狂気",
   "CoC7.Sane": "正気",
-  "CoC7.OtherTalent": "その他",
+  "CoC7.OtherTalent": "それ以外",
   "CoC7.Items": "アイテム",
   "CoC7.Vehicle": "乗物",
   "CoC7.Books": "魔道書",
@@ -902,12 +875,7 @@
   "CoC7.WarnFastTargetWithWrongMOV": "MOV 7以下の対象に「疾走する対象」の選択がされている (MOV: {mov})",
   "CoC7.WarnTooManyTarget": "対象の選択数が多すぎる。最後に選択した対象のみを有効にする",
   "CoC7.WarnNoTargetsSanCheck": "対象が選択されていません。対象を選択するか、リンクを作成してください。",
-<<<<<<< HEAD
-  "CoC7.allActors": "全アクター",
-=======
-
   "CoC7.allActors": "全キャラクター",
->>>>>>> 6e4c6658 (アクター→キャラクター)
   "CoC7.restTargets": "休息の対象者",
   "CoC7.startRest": "休息を取る",
   "CoC7.dreaming": "探索者たちは､眠りに落ちて夢を見る",
@@ -917,12 +885,7 @@
   "CoC7.magicPointsRecovered": "MPを回復",
   "CoC7.hasCriticalWounds": "重傷のため､耐久力は回復できない",
   "CoC7.quickHealer": "クイック･ヒーラー",
-<<<<<<< HEAD
-  "CoC7.ErrorNoDodgeSkill": "アクターは回避技能を持っていない",
-=======
-
   "CoC7.ErrorNoDodgeSkill": "キャラクターは回避技能を持っていない",
->>>>>>> 6e4c6658 (アクター→キャラクター)
   "CoC7.ErrorNotEnoughLuck": "{actor} にはロールを成功させるために必要な幸運が無い",
   "CoC7.ErrorManeuverNotPossible": "対象とのビルド差のためマヌーバーを試みることができない",
   "CoC7.ErrorNotFound": "{missing} が見つからない！",
@@ -957,12 +920,7 @@
   "CoC7.Enable": "有効化",
   "CoC7.Disable": "無効化",
   "CoC7.Duration": "持続時間",
-<<<<<<< HEAD
-  "CoC7.ActorImporter": "アクター･インポーター",
-=======
-
   "CoC7.ActorImporter": "キャラクター･インポーター",
->>>>>>> 6e4c6658 (アクター→キャラクター)
   "CoC7.ActorImporterSummary": "説明とステータスから､NPCまたはクリーチャーをインポートする。対応するテキストを貼り付けるだけだ",
   "CoC7.PasteTheDataBelow": "以下にテキストデータを貼り付ける",
   "CoC7.TextFieldInvalidCharacters": "本文中に無効な文字が含まれており､修正されないものは削除されるため注意。",
@@ -994,12 +952,7 @@
   "CoC7.ImportActorItemsItemWorldModuleSystem": "アイテム / ワールド / MOD / システム",
   "CoC7.ImportActorItemsWorldModuleItemSystem": "ワールド / MOD / アイテム / システム",
   "CoC7.ActorImported": "新たな {actorType} をインポート: {actorName}",
-<<<<<<< HEAD
-  "CoC7.DholeHouseActorImporter": "The Dhole's House アクター・インポーター JSON",
-=======
-
   "CoC7.DholeHouseActorImporter": "The Dhole's House キャラクター・インポーター JSON",
->>>>>>> 6e4c6658 (アクター→キャラクター)
   "CoC7.DholeHouseActorImporterSummary": "DholeHouse上のキャラクターをJSONファイルとして出力し、ここにアップロードする。",
   "CoC7.DholeHouseImportingName": "次をインポート: ",
   "CoC7.DholeHousePickYourJSONFile": "The Dhole's House から出力したJSONファイルを選択 ",
